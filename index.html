@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<title>3B232049</title>
-<style>
-body{
-  font-family: Arial;
-  background:#f5f5f5;
-  text-align:center;
-  padding-top:80px;
-}
-h1{color:#333;}
-</style>
+    <meta charset="UTF-8">
+    <title>3B232049</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #mainBtn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .childBtn {
+            background: #2196F3;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-<h1>你好！</h1>
-<p>000</p>
+
+    <h1>動態按鈕示範</h1>
+
+    <button id="mainBtn" onclick="addButton()">新增子按鈕</button>
+
+    <div id="buttonArea"></div>
+
+    <script>
+let count = 1;
+
+function addButton(){
+  const btn = document.createElement("button");
+  btn.innerText = "子按鈕 " + count;
+  btn.className = "childBtn";
+  count++;
+
+  document.getElementById("buttonArea").appendChild(btn);
+}
+    </script>
+
 </body>
 </html>
